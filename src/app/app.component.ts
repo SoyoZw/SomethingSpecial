@@ -32,22 +32,22 @@ export class AppComponent {
 
   memories: Memory[] = [
     {
-      image: 'assets/images/us-1.jpg',
+      image: 'assets/images/IMG_5735.jpeg',
       caption: 'One of my favourite smiles',
       date: 'A moment I wish I could relive'
     },
     {
-      image: 'assets/images/us-2.jpg',
+      image: 'assets/images/IMG_5734.png',
       caption: 'Just the two of us',
       date: 'A memory worth keeping'
     },
     {
-      image: 'assets/images/us-3.jpg',
+      image: 'assets/images/IMG_1242.jpeg',
       caption: 'The little things',
       date: 'One of those beautiful moments'
     },
     {
-      image: 'assets/images/us-4.jpg',
+      image: 'assets/images/IMG_4923.jpeg',
       caption: 'A picture, a thousand memories',
       date: 'Forever a special memory'
     }
