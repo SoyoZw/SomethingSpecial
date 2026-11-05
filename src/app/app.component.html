@@ -1,0 +1,417 @@
+
+<main>
+
+  <!-- Floating decorative hearts -->
+  <div class="floating-hearts" aria-hidden="true">
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-logo">A little something <span>♡</span></div>
+
+    <div class="nav-links">
+      <button (click)="scrollTo('letter')">My Letter</button>
+      <button (click)="scrollTo('memories')">Our Memories</button>
+      <button (click)="scrollTo('final')">One Last Thing</button>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <span class="eyebrow">A LITTLE SOMETHING FROM ME, WITH LOVE</span>
+
+      <div class="hero-heart">♡</div>
+
+      <h1>
+        For you,<br>
+        <span>Baby.</span>
+      </h1>
+
+      <p class="hero-description">
+        My love, Sugar...
+
+        Sometimes words are difficult to put together,
+        so I decided to create something instead.
+
+        A little space filled with memories, appreciation
+        and a few things I've been wanting to tell you.
+      </p>
+
+      <button
+        class="primary-button"
+        (click)="scrollTo('letter')">
+
+        Open this little surprise
+        <span>♡</span>
+
+      </button>
+
+      <div class="scroll-indicator">
+        <span>MADE ESPECIALLY FOR YOU</span>
+        <span class="arrow">↓</span>
+      </div>
+
+    </div>
+
+    <div class="hero-decoration decoration-one">♡</div>
+    <div class="hero-decoration decoration-two">✧</div>
+    <div class="hero-decoration decoration-three">♥</div>
+    <div class="hero-decoration decoration-four">✿</div>
+
+  </section>
+
+
+  <!-- INTRODUCTION -->
+  <section class="intro-section section-padding">
+
+    <div class="intro-content">
+
+      <span class="eyebrow">BEFORE ANYTHING ELSE</span>
+
+      <h2>
+        This is not just<br>
+        <span>another website.</span>
+      </h2>
+
+      <p>
+        It's a little reminder of someone who means a lot
+        to me. A place where I can put together some
+        beautiful memories and express a few things
+        that sometimes don't come out quite right in words.
+      </p>
+
+      <div class="intro-decoration">With love, just for you ♡</div>
+
+    </div>
+
+  </section>
+
+
+  <!-- LETTER -->
+  <section class="letter-section section-padding" id="letter">
+
+    <div class="section-heading">
+      <span class="eyebrow">A LETTER FROM MY HEART</span>
+      <h2>Dear <span>Baby...</span></h2>
+      <div class="heading-divider">♡</div>
+    </div>
+
+    <div class="letter-card">
+
+      <div class="letter-top">
+        <span>To my favourite person...</span>
+        <span class="letter-flower">✿</span>
+      </div>
+
+      <p>Hey Sugar,</p>
+
+      <p>
+        I have been thinking about a lot of things,
+        and one thing I know is that I didn't want to
+        let another day pass without finding a way
+        to remind you how much you mean to me.
+      </p>
+
+      <p>
+        I know that things between us haven't always
+        been easy. I know there are moments I could
+        have handled differently, things I could have
+        said better and times when I could have
+        understood you more.
+      </p>
+
+      <p>
+        I am sorry for the moments when my actions
+        or words may have made you feel otherwise.
+        I don't want to dismiss your feelings or
+        pretend that everything has been perfect.
+      </p>
+
+      <p>
+        I've realised that loving someone is about
+        more than saying the right things. It is about
+        showing up, listening, being patient,
+        understanding and making someone feel valued
+        through your actions.
+      </p>
+
+      <p>
+        I want to become better at those things.
+        Not simply because I miss what we had,
+        but because I recognise how important
+        those things are.
+      </p>
+
+      <p>
+        I miss the little things. The conversations,
+        the laughter, the random moments and the
+        feeling of having someone so special to share
+        life's ordinary days with.
+      </p>
+
+      <p>
+        I appreciate you more than I probably
+        communicated sometimes, and I hope this
+        little surprise reminds you of that.
+      </p>
+
+      <p class="letter-signature">
+        With all my love, always. ♡
+      </p>
+
+      <button
+        class="text-button"
+        (click)="revealLetter()">
+
+        {{ showLetter
+          ? 'Close my little note'
+          : 'There is something else I want to say...' }}
+
+        <span>♡</span>
+
+      </button>
+
+      <div class="extra-letter" *ngIf="showLetter">
+
+        <div class="heading-divider">✧</div>
+
+        <p>
+          If I am lucky enough to have another opportunity
+          with you, I would love to approach it differently.
+          With more patience, more understanding,
+          more intentional effort and a willingness
+          to keep growing together.
+        </p>
+
+        <p>
+          I don't expect everything to change overnight,
+          and I understand that trust and healing take time.
+          I just want you to know that I am willing to put
+          in the effort.
+        </p>
+
+        <p>
+          You are special to me, Baby.
+          I hope you never doubt that.
+        </p>
+
+        <p class="letter-signature">
+          Yours sincerely, with love. ♡
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MEMORIES -->
+  <section class="memories-section section-padding" id="memories">
+
+    <div class="section-heading">
+
+      <span class="eyebrow">A LITTLE TRIP DOWN MEMORY LANE</span>
+
+      <h2>Our little <span>moments</span></h2>
+
+      <p>
+        Some memories don't need a special occasion
+        to become unforgettable.
+      </p>
+
+    </div>
+
+    <div class="memory-grid">
+
+      <div
+        class="memory-card"
+        *ngFor="let memory of memories; let i = index">
+
+        <div class="memory-image">
+
+          <img
+            [src]="memory.image"
+            [alt]="memory.caption"
+            loading="lazy">
+
+          <div class="image-overlay">
+            <span>♡</span>
+          </div>
+
+          <div class="memory-number">
+            0{{ i + 1 }}
+          </div>
+
+        </div>
+
+        <div class="memory-caption">
+          <h3>{{ memory.caption }}</h3>
+          <p>{{ memory.date }}</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <p class="gallery-note">
+      If I could keep some moments in a little box,
+      these would definitely be in it. ♡
+    </p>
+
+  </section>
+
+
+  <!-- REASONS -->
+  <section class="reasons-section section-padding" id="reasons">
+
+    <div class="section-heading">
+
+      <span class="eyebrow">THINGS I HOPE YOU NEVER FORGET</span>
+
+      <h2>What makes you <span>special</span></h2>
+
+      <p>
+        Not just the big things, but all the little
+        details that make you, you.
+      </p>
+
+    </div>
+
+    <div class="reasons-grid">
+
+      <div
+        class="reason-card"
+        *ngFor="let reason of reasons">
+
+        <div class="reason-icon">
+          {{ reason.icon }}
+        </div>
+
+        <h3>{{ reason.title }}</h3>
+
+        <p>{{ reason.description }}</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GROWTH -->
+  <section class="growth-section section-padding" id="growth">
+
+    <div class="section-heading">
+
+      <span class="eyebrow">A LITTLE SELF-REFLECTION</span>
+
+      <h2>Things I am <span>learning</span></h2>
+
+      <p>
+        Because meaningful connections deserve
+        meaningful effort.
+      </p>
+
+    </div>
+
+    <div class="growth-list">
+
+      <div
+        class="growth-card"
+        *ngFor="let lesson of lessons">
+
+        <div class="growth-number">
+          {{ lesson.number }}
+        </div>
+
+        <div class="growth-text">
+          <h3>{{ lesson.title }}</h3>
+          <p>{{ lesson.description }}</p>
+        </div>
+
+        <div class="growth-heart">♡</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL MESSAGE -->
+  <section class="final-section section-padding" id="final">
+
+    <div class="final-content">
+
+      <div class="final-heart">♡</div>
+
+      <span class="eyebrow">ONE LAST THING, MY LOVE</span>
+
+      <h2>
+        If I could ask for<br>
+        <span>one more chance...</span>
+      </h2>
+
+      <p>
+        It wouldn't be to pretend that the past never
+        happened. It would be an opportunity to take
+        everything I've learned and build something
+        healthier, happier and more meaningful.
+      </p>
+
+      <p>
+        I would love to laugh with you again,
+        create new memories, experience new things
+        and appreciate even the simplest moments.
+      </p>
+
+      <p>
+        I know that words are only the beginning.
+        What matters is what comes after them.
+      </p>
+
+      <div class="final-highlight">
+        No pressure, no expectations.
+        Just an honest heart that would love
+        the opportunity to try again.
+      </div>
+
+      <div class="final-signature">
+
+        To Baby, My love, my Sugar.
+
+        <span>Made with love, just for you ♥</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <p>
+      A little piece of my heart, made just for you.
+    </p>
+
+    <span>♡</span>
+
+    <small>Always remember how special you are.</small>
+
+  </footer>
+
+</main>
