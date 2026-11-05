@@ -1,6 +1,6 @@
 
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PasswordGateComponent } from './password-gate.component/password-gate.component';
 
 interface Memory {
@@ -25,10 +25,40 @@ interface Reason {
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy{
 
   isUnlocked = false;
   showLetter = false;
+
+  isDarkMode = false;
+
+  private themeInterval?: number;
+
+  ngOnInit(): void {
+    this.updateTheme();
+
+    // Check every minute in case the website stays open
+    // while the time changes from day to evening.
+    if (typeof window !== 'undefined') {
+      this.themeInterval = window.setInterval(() => {
+        this.updateTheme();
+      }, 60_000);
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.themeInterval !== undefined) {
+      window.clearInterval(this.themeInterval);
+    }
+  }
+
+  private updateTheme(): void {
+    const currentHour = new Date().getHours();
+    //const currentHour = 20;
+    //const currentHour = 12;
+
+    this.isDarkMode = currentHour >= 18 || currentHour < 6;
+  }
 
   memories: Memory[] = [
     {
