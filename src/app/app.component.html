@@ -1,4 +1,13 @@
 
+
+<app-password-gate
+  *ngIf="!isUnlocked"
+  (unlocked)="isUnlocked = true">
+</app-password-gate>
+
+<ng-container *ngIf="isUnlocked">
+
+  <!-- YOUR EXISTING ROMANTIC WEBSITE -->
 <main>
 
   <!-- Floating decorative hearts -->
@@ -415,3 +424,6 @@
   </footer>
 
 </main>
+</ng-container>
+
+

@@ -1,6 +1,7 @@
 
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { PasswordGateComponent } from './password-gate.component/password-gate.component';
 
 interface Memory {
   image: string;
@@ -17,12 +18,16 @@ interface Reason {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    PasswordGateComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
 
+  isUnlocked = false;
   showLetter = false;
 
   memories: Memory[] = [
